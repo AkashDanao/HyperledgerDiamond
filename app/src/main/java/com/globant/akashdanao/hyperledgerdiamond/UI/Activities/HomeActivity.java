@@ -14,8 +14,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
-    String TAG = MainActivity.class.getSimpleName();
+public class HomeActivity extends AppCompatActivity {
+    String TAG = HomeActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
