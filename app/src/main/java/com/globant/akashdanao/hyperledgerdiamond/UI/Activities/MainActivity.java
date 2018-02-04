@@ -1,4 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond;
+package com.globant.akashdanao.hyperledgerdiamond.UI.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.globant.akashdanao.hyperledgerdiamond.Data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.Data.Models.Diamond;
+import com.globant.akashdanao.hyperledgerdiamond.R;
 
 import java.util.List;
 
