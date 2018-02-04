@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="horizontal_padding">10dp</dimen>
+    <dimen name="vertical_padding">10dp</dimen>
+    <dimen name="corner_radius">5dp</dimen>
+    <dimen name="form_input_height">40dp</dimen>
+    <dimen name="form_element_spacing">15dp</dimen>
+    <dimen name="form_element_padding">10dp</dimen>
+</resources>
