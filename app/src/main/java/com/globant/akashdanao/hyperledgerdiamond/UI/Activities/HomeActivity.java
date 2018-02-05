@@ -1,10 +1,13 @@
 package com.globant.akashdanao.hyperledgerdiamond.UI.Activities;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.globant.akashdanao.hyperledgerdiamond.Data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.Data.Models.Diamond;
@@ -16,6 +19,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,6 +29,9 @@ public class HomeActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_diamond)
     RecyclerView recyclerViewDiamond;
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+
     private DiamondAdapter diamondAdapter;
     private List<Diamond> diamondList = new ArrayList();
 
@@ -61,4 +68,10 @@ public class HomeActivity extends AppCompatActivity {
         diamondAdapter = new DiamondAdapter(diamondList);
         recyclerViewDiamond.setAdapter(diamondAdapter);
     }
+
+    @OnClick(R.id.fab)
+    public void onClickFab(View v){
+        startActivity(new Intent(this, AddDiamondActivity.class));
+    }
+
 }

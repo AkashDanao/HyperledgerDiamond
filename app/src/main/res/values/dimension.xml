@@ -6,4 +6,5 @@
     <dimen name="form_input_height">40dp</dimen>
     <dimen name="form_element_spacing">15dp</dimen>
     <dimen name="form_element_padding">10dp</dimen>
+    <dimen name="sub_title">20sp</dimen>
 </resources>
