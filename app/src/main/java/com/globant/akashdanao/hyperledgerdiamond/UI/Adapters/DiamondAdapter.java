@@ -23,7 +23,7 @@ public class DiamondAdapter extends RecyclerView.Adapter<DiamondAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_login, parent);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.diamond_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -34,7 +34,7 @@ public class DiamondAdapter extends RecyclerView.Adapter<DiamondAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return this.diamondList.size();
+        return 3;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

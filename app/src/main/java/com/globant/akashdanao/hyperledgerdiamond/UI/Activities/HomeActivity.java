@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -31,12 +32,18 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        ButterKnife.bind(this);
         init();
 
         ApiClient.getInstance().getAllDiamonds().enqueue(new Callback<List<Diamond>>() {
             @Override
             public void onResponse(Call<List<Diamond>> call, Response<List<Diamond>> response) {
                 Log.d(TAG, "onResponse: " + response.toString());
+                Log.d(TAG, "onResponse: body  " + response.body());
+                Log.d(TAG, "onResponse: code "  + response.code());
+                Log.d(TAG, "onResponse: message " + response.message());
+                diamondList.addAll(new ArrayList<Diamond>());
+                diamondAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -53,6 +60,5 @@ public class HomeActivity extends AppCompatActivity {
         recyclerViewDiamond.setLayoutManager(layoutManager);
         diamondAdapter = new DiamondAdapter(diamondList);
         recyclerViewDiamond.setAdapter(diamondAdapter);
-        diamondAdapter.notifyDataSetChanged();
     }
 }
