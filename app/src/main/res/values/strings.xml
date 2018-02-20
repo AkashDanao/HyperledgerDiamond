@@ -1,14 +1,15 @@
 <resources>
-    <string name="app_name">HyperledgerDiamond</string>
+    <string name="app_name">HyperledgerTuna</string>
     <string name="login">Login</string>
     <string name="hint_username">Please enter username</string>
     <string name="hint_password">Please enter password</string>
-    <string name="hint_id">Enter Diamond id</string>
+    <string name="hint_id">Enter Tuna id</string>
     <string name="hint_vessel">Enter Vessel name</string>
     <string name="hint_longitude">Enter Longitude</string>
     <string name="hint_latitude">Enter Latitude</string>
     <string name="hint_timestamp">Enter Timestamp</string>
     <string name="hint_holder_name">Enter Holder name</string>
-    <string name="diamond_add_title">Create Diamond Record</string>
+    <string name="diamond_add_title">Create Tuna Record</string>
     <string name="create_record">Create</string>
+    <string name="diamond_details_title">Tuna Details</string>
 </resources>

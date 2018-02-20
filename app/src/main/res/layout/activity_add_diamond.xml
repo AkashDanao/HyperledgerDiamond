@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.globant.akashdanao.hyperledgerdiamond.UI.Activities.AddDiamondActivity">
+    tools:context="com.globant.akashdanao.hyperledgerdiamond.ui.activities.AddDiamondActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,8 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/diamond_add_title"
-            android:textStyle="bold"
-            android:textSize="@dimen/sub_title"/>
+            android:textSize="@dimen/sub_title"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/et_id"
@@ -78,10 +78,10 @@
             android:id="@+id/bt_create"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_record"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/button_background"
-            android:layout_marginTop="@dimen/form_element_spacing" />
+            android:text="@string/create_record"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 

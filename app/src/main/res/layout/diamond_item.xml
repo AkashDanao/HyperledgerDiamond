@@ -13,15 +13,13 @@
         <TextView
             android:id="@+id/tv_holder_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Holder name : Akash" />
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/tv_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/form_element_spacing"
-            android:text="Size is  : 3" />
+            android:layout_marginTop="@dimen/form_element_spacing"/>
 
     </LinearLayout>
 

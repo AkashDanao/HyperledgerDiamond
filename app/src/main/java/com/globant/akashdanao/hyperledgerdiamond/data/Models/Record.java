@@ -1,8 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond.Data.Models;
-
-/**
- * Created by akash.danao on 02/02/18.
- */
+package com.globant.akashdanao.hyperledgerdiamond.data.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -12,12 +8,15 @@ public class Record {
     @SerializedName("holder")
     @Expose
     private String holder;
+
     @SerializedName("location")
     @Expose
     private String location;
+
     @SerializedName("timestamp")
     @Expose
     private String timestamp;
+
     @SerializedName("vessel")
     @Expose
     private String vessel;
@@ -53,7 +52,6 @@ public class Record {
     public void setVessel(String vessel) {
         this.vessel = vessel;
     }
-
 }
 
 

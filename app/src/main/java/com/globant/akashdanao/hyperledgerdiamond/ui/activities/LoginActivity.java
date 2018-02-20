@@ -1,4 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond.UI.Activities;
+package com.globant.akashdanao.hyperledgerdiamond.ui.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
