@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,15 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/default_margin"
-        android:layout_marginStart="@dimen/default_margin"
+        android:layout_margin="@dimen/default_margin"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/et_new_record"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/default_margin"
             android:background="@android:color/transparent"
             android:hint="@string/add_new_record_hint"
             android:textSize="@dimen/add_new_record_hint_size" />
@@ -167,5 +165,4 @@
 
     </LinearLayout>
 
-
-</android.support.v4.widget.NestedScrollView>
+</ScrollView>
