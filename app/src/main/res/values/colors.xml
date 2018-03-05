@@ -6,4 +6,16 @@
     <color name="colorCreate">#FF6347</color>
 
     <color name="color_button_background">#DFDFE4</color>
+    <color name="certification_gia_button_color">#00D85A</color>
+    <color name="certification_gia_button_color_light">#E9F9F0</color>
+
+    <color name="certification_igi_button_color">#3FB6DC</color>
+    <color name="certification_igi_button_color_light">#E9F9F0</color>
+
+    <color name="certification_hrd_button_color">#FF7052</color>
+    <color name="certification_hrd_button_color_light">#E9F9F0</color>
+
+
+    
+
 </resources>

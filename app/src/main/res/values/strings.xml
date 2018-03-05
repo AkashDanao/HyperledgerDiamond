@@ -30,5 +30,8 @@
     <string name="diamond_carat">Carat</string>
     <string name="diamond_certification">CHOOSE CERTIFICATION</string>
     <string name="diamond_add_record">Add Record</string>
+    <string name="diamond_certification_gia">GIA</string>
+    <string name="diamond_certification_igi">IGI</string>
+    <string name="diamond_certification_hrd">HRD</string>
 
 </resources>
