@@ -23,7 +23,7 @@
         <EditText
             android:id="@+id/et_id"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_id"
@@ -32,7 +32,7 @@
         <EditText
             android:id="@+id/et_vessel"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_vessel"
@@ -41,7 +41,7 @@
         <EditText
             android:id="@+id/et_longitude"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_longitude"
@@ -50,7 +50,7 @@
         <EditText
             android:id="@+id/et_latitude"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_latitude"
@@ -59,7 +59,7 @@
         <EditText
             android:id="@+id/et_timestamp"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_timestamp"
@@ -68,7 +68,7 @@
         <EditText
             android:id="@+id/et_holder_name"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/form_input_height"
+            android:layout_height="@dimen/login_edit_text_height"
             android:layout_marginTop="@dimen/form_element_spacing"
             android:background="@drawable/rounded_corner_background"
             android:hint="@string/hint_holder_name"
