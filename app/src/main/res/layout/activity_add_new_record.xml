@@ -155,6 +155,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/button_add_record"
             android:layout_width="@dimen/button_record_add_width"
             android:layout_height="@dimen/button_record_add_height"
             android:layout_gravity="center_horizontal"
