@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">HyperledgerTuna</string>
+    <string name="app_name">Trmond</string>
     <string name="login">Login</string>
-    <string name="hint_username">Please enter username</string>
-    <string name="hint_password">Please enter password</string>
+    <string name="hint_username">Email Address</string>
+    <string name="hint_password">Password</string>
     <string name="hint_id">Enter Tuna id</string>
     <string name="hint_vessel">Enter Vessel name</string>
     <string name="hint_longitude">Enter Longitude</string>
@@ -12,4 +12,10 @@
     <string name="diamond_add_title">Create Tuna Record</string>
     <string name="create_record">Create</string>
     <string name="diamond_details_title">Tuna Details</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="no_account">Still without account?</string>
+    <string name="create_account">Create One</string>
+    <string name="welcome">Hello!</string>
+    <string name="fingerprint">you can use your Fingerprint</string>
+    <string name="fingerprint_text">to grant access to the app</string>
 </resources>

@@ -41,7 +41,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         return recordList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class  ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_holder_name)
         TextView holderName;
 
