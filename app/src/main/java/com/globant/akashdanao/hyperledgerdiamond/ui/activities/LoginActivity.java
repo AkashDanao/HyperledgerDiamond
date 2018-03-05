@@ -1,5 +1,6 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import com.globant.akashdanao.hyperledgerdiamond.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,5 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     public void onClickLogin(View v){
         Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }
