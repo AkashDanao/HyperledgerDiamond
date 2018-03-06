@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_new_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/add_new_record_hint"
+            android:textSize="@dimen/add_new_record_hint_size" />
+
+        <TextView
+            android:id="@+id/tv_add_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:text="@string/add_new_photos_header" />
+
+        <ImageView
+            android:id="@+id/iv_add_photos"
+            android:layout_width="@dimen/add_photo_width"
+            android:layout_height="@dimen/add_photo_height"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:contentDescription="@null"
+            android:src="@drawable/add_photos" />
+
+        <TextView
+            android:id="@+id/tv_diamond_info_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:text="@string/diamond_information" />
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_clarity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:hint="@string/diamond_clarity" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:hint="@string/diamond_color" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_cut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:hint="@string/diamond_cut" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_carat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:hint="@string/diamond_carat" />
+
+        <TextView
+            android:id="@+id/tv_certification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/diamond_certification" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_gia"
+                    android:layout_width="@dimen/certification_button_width"
+                    android:layout_height="@dimen/certification_button_height"
+                    app:sb_background="@color/certification_gia_button_color_light"
+                    app:sb_button_color="@color/certification_gia_button_color"
+                    app:sb_checked_color="@color/certification_gia_button_color_light"
+                    app:sb_show_indicator="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/certification_gia_button_color"
+                    android:text="@string/diamond_certification_gia" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_igi"
+                    android:layout_width="@dimen/certification_button_width"
+                    app:sb_background="@color/certification_igi_button_color_light"
+                    app:sb_button_color="@color/certification_igi_button_color"
+                    android:layout_height="@dimen/certification_button_height"
+                    app:sb_checked_color="@color/certification_gia_button_color_light"
+                    app:sb_show_indicator="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/certification_igi_button_color"
+                    android:text="@string/diamond_certification_igi" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.suke.widget.SwitchButton
+                    android:id="@+id/sb_hrd"
+                    android:layout_width="@dimen/certification_button_width"
+                    app:sb_background="@color/certification_hrd_button_color_light"
+                    app:sb_button_color="@color/certification_hrd_button_color"
+                    android:layout_height="@dimen/certification_button_height"
+                    app:sb_checked_color="@color/certification_gia_button_color_light"
+                    app:sb_show_indicator="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/certification_hrd_button_color"
+                    android:text="@string/diamond_certification_hrd" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_add_record"
+            android:layout_width="@dimen/button_record_add_width"
+            android:layout_height="@dimen/button_record_add_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_margin"
+            android:background="@drawable/button_add_record_rounded"
+            android:text="@string/diamond_add_record" />
+
+
+    </LinearLayout>
+
+</ScrollView>

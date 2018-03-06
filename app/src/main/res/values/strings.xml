@@ -18,4 +18,20 @@
     <string name="welcome">Hello!</string>
     <string name="fingerprint">you can use your Fingerprint</string>
     <string name="fingerprint_text">to grant access to the app</string>
+
+
+    <!-- Add new record -->
+    <string name="add_new_record_hint">Add new record</string>
+    <string name="add_new_photos_header">ADD PHOTOS</string>
+    <string name="diamond_information">DIAMOND INFORMATION</string>
+    <string name="diamond_clarity">Clarity</string>
+    <string name="diamond_color">Color</string>
+    <string name="diamond_cut">Cut</string>
+    <string name="diamond_carat">Carat</string>
+    <string name="diamond_certification">CHOOSE CERTIFICATION</string>
+    <string name="diamond_add_record">Add Record</string>
+    <string name="diamond_certification_gia">GIA</string>
+    <string name="diamond_certification_igi">IGI</string>
+    <string name="diamond_certification_hrd">HRD</string>
+
 </resources>
