@@ -59,8 +59,8 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         }
 
         public void bind(Record record) {
-            holderName.setText("Holder Name : " + record.getHolder());
-            size.setText("Vessle : " + record.getVessel());
+            holderName.setText(record.getHolder());
+            size.setText(record.getVessel());
             Picasso.with(itemView.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
         }
     }
