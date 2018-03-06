@@ -6,11 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.ui.activities.DiamondDetailsActivity;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -48,6 +50,9 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         @BindView(R.id.tv_size)
         TextView size;
 
+        @BindView(R.id.iv_diamond)
+        ImageView imageViewDiamond;
+
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
@@ -56,6 +61,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         public void bind(Record record) {
             holderName.setText("Holder Name : " + record.getHolder());
             size.setText("Vessle : " + record.getVessel());
+            Picasso.with(itemView.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
         }
     }
 }
