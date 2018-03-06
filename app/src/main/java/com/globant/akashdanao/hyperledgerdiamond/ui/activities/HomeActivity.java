@@ -30,8 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     @BindView(R.id.rv_diamond)
     RecyclerView recyclerViewDiamond;
 
-    @BindView(R.id.fab)
-    FloatingActionButton floatingActionButton;
+
 
     private RecordsAdapter recordsAdapter;
 
@@ -72,8 +71,4 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.fab)
-    public void onClickFab(View v) {
-        startActivity(new Intent(this, AddDiamondActivity.class));
-    }
 }
