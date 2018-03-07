@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/horizontal_padding"
+    android:padding="@dimen/default_margin"
     tools:context="com.globant.akashdanao.hyperledgerdiamond.ui.activities.LoginActivity">
 
     <RelativeLayout
@@ -28,35 +28,52 @@
             android:paddingLeft="@dimen/form_element_padding"
             android:text="@string/app_name"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/sub_title" />
+            android:textSize="@dimen/sub_title"
+            />
 
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_header"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/form_group_padding">
+        android:paddingBottom="@dimen/form_group_padding"
+        >
 
         <TextView
+            android:id="@+id/tv_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/welcome"
-            android:textSize="@dimen/title" />
+            android:textSize="@dimen/title"
+            android:textColor="@android:color/black"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_fingerprint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_welcome"
+            android:text="@string/fingerprint_text_1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fingerprint" />
+            android:layout_below="@id/tv_welcome"
+            android:layout_toRightOf="@+id/tv_fingerprint_text"
+            android:text="@string/fingerprint"
+            android:paddingLeft="@dimen/form_element_padding"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/fingerprint_text" />
+            android:layout_below="@id/tv_fingerprint_text"
+            android:text="@string/fingerprint_text_2" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
