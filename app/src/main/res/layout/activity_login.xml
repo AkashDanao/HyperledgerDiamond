@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/default_margin"
+    android:background="@drawable/ic_dia_2"
     tools:context="com.globant.akashdanao.hyperledgerdiamond.ui.activities.LoginActivity">
 
     <RelativeLayout
