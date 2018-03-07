@@ -22,6 +22,8 @@ import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.ui.Adapters.RecordsAdapter;
+import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.AddDiamondFragment;
+import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.AddDiamondFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.LandingFragment;
 
 import java.util.ArrayList;
@@ -55,7 +57,7 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
         fragmentManager =  getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-        loadFirstFragment();
+        loadFragment(new LandingFragment());
 
     }
 
@@ -65,17 +67,13 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
             android.support.v4.app.Fragment fragment;
             switch (item.getItemId()){
                 case R.id.action_diamond :
-//                    if (fragmentManager.findFragmentByTag("1") == null){
-//                        loadingFragment = new LandingFragment();
-//                    }
-//                    loadFragament(loadingFragment);
-
                     fragment = new LandingFragment();
-                    loadFragament(fragment);
+                    loadFragment(fragment);
                     return true;
                 case R.id.action_add :
+                    fragment = new AddDiamondFragment();
+                    loadFragment(fragment);
                     return  true;
-
                 case R.id.action_search :
                     return true;
 
@@ -84,13 +82,10 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         }
     };
 
-    public void loadFirstFragment(){
-        transaction.replace(R.id.fl_home, new LandingFragment());
-        transaction.commit();
-    }
 
-    public void loadFragament(android.support.v4.app.Fragment fragment){
-        transaction.replace(R.id.fl_home, fragment, "1");
+    private void loadFragment(android.support.v4.app.Fragment fragment) {
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fl_home, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
