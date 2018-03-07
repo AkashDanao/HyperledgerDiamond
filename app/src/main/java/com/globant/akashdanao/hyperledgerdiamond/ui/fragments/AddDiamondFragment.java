@@ -1,4 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond.ui.Fragments;
+package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 
 import android.os.Bundle;

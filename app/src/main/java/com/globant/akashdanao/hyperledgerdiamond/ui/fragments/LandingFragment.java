@@ -1,4 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond.ui.Fragments;
+package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -83,7 +83,6 @@ public class LandingFragment extends Fragment {
         recordsAdapter = new RecordsAdapter(records);
         recyclerViewDiamond.setAdapter(recordsAdapter);
     }
-
     private void handleError(Throwable throwable) {
 
     }
