@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/action_diamond"
-        android:icon="@drawable/ic_diamond"
+        android:icon="@drawable/ic_diamond_menu"
         android:title="" />
     <item
         android:id="@+id/action_search"
-        android:icon="@drawable/ic_search_black_24dp"
+        android:icon="@drawable/ic_search_menu"
         android:title="" />
     <item
         android:id="@+id/action_add"
-        android:icon="@drawable/ic_add_black_24dp"
+        android:icon="@drawable/ic_add_menu"
         android:title="" />
     <item
         android:id="@+id/action_transfer"
-        android:icon="@drawable/ic_swap_horiz_black_24dp"
+        android:icon="@drawable/ic_transfer_menu"
         android:title="" />
 </menu>

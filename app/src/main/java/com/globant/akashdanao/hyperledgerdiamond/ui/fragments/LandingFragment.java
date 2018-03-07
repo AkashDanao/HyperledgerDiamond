@@ -9,12 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.RecordsAdapter;
+import com.globant.akashdanao.hyperledgerdiamond.utils.PicassoCircleTransformation;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -36,6 +40,12 @@ public class LandingFragment extends Fragment {
     @BindView(R.id.rv_diamond)
     RecyclerView recyclerViewDiamond;
 
+    @BindView(R.id.iv_avatar)
+    ImageView imageViewUser;
+
+    @BindView(R.id.tv_username)
+    TextView textViewUserName;
+
     private  RecordsAdapter recordsAdapter;
 
 
@@ -49,6 +59,9 @@ public class LandingFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_landing, container, false);
         ButterKnife.bind(this, view);
+
+        Picasso.with(getActivity()).load(R.drawable.avatar_placeholder)
+                .transform(new PicassoCircleTransformation()).into((imageViewUser));
         init();
         // Inflate the layout for this fragment
         return view;
