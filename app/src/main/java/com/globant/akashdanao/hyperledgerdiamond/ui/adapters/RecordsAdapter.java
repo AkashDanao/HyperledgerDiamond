@@ -1,7 +1,5 @@
-package com.globant.akashdanao.hyperledgerdiamond.ui.Adapters;
+package com.globant.akashdanao.hyperledgerdiamond.ui.adapters;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +9,6 @@ import android.widget.TextView;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
-import com.globant.akashdanao.hyperledgerdiamond.ui.activities.DiamondDetailsActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

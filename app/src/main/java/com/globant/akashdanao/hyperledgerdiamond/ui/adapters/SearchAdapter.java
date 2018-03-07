@@ -1,4 +1,4 @@
-package com.globant.akashdanao.hyperledgerdiamond.ui.Adapters;
+package com.globant.akashdanao.hyperledgerdiamond.ui.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

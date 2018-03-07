@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
-import com.globant.akashdanao.hyperledgerdiamond.ui.Adapters.SearchAdapter;
+import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.SearchAdapter;
 
 
 public class SearchFragment extends Fragment {

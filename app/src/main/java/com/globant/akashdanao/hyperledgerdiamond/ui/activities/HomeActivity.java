@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
-import com.globant.akashdanao.hyperledgerdiamond.ui.Adapters.RecordsAdapter;
+import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.RecordsAdapter;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.AddDiamondFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.LandingFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.SearchFragment;

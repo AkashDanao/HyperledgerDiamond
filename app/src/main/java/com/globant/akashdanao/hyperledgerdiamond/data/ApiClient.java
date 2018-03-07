@@ -1,17 +1,13 @@
 package com.globant.akashdanao.hyperledgerdiamond.data;
 
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
-import com.globant.akashdanao.hyperledgerdiamond.Utils.Constants;
-import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.net.URLEncoder;
 import java.util.List;
 
 import io.reactivex.Flowable;

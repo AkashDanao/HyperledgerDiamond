@@ -14,7 +14,7 @@ import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
-import com.globant.akashdanao.hyperledgerdiamond.ui.Adapters.RecordsAdapter;
+import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.RecordsAdapter;
 
 import java.util.List;
 
