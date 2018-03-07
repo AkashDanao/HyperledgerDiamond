@@ -16,6 +16,7 @@
     <!-- margin and padding -->
     <dimen name="default_margin">20dp</dimen>
     <dimen name="default_margin_small">10dp</dimen>
+    <dimen name="scroll_margin">40dp</dimen>
     <dimen name="horizontal_padding">15dp</dimen>
     <dimen name="vertical_padding">10dp</dimen>
     <dimen name="form_element_padding">10dp</dimen>

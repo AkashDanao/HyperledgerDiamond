@@ -1,40 +1,21 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.activities;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
-import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.R;
-import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.ui.Adapters.RecordsAdapter;
-import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.AddDiamondFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.AddDiamondFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.Fragments.LandingFragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import io.reactivex.Flowable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 public class HomeActivity extends AppCompatActivity implements LandingFragment.OnFragmentInteractionListener {
     String TAG = HomeActivity.class.getSimpleName();
@@ -55,10 +36,10 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
+
         fragmentManager =  getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         loadFragment(new LandingFragment());
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
