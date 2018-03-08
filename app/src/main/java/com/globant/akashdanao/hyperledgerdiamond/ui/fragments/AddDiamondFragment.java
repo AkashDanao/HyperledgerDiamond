@@ -15,7 +15,6 @@ import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
 import com.suke.widget.SwitchButton;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -107,16 +106,20 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     public void onAddRecordButtonClick() {
         certification = "";
         for (Map.Entry<String, String> entry: mapCertification.entrySet()) {
-            certification = certification + "," + entry.getValue();
+            if (certification.equalsIgnoreCase("")) {
+                certification = entry.getValue();
+            } else {
+                certification = certification + "," + entry.getValue();
+            }
         }
         Log.d(TAG, "onAddRecordButtonClick: " + certification);
         // id , color, cut, carat, clarity, certification, name
-//        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString())
-//                .subscribeOn(Schedulers.io())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                        id -> Toast.makeText(getActivity(), "Record Added Successfully", Toast.LENGTH_SHORT).show(),
-//                        e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
+        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                        id -> Toast.makeText(getActivity(), "Record Added Successfully", Toast.LENGTH_SHORT).show(),
+                        e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
 
     }
 }
