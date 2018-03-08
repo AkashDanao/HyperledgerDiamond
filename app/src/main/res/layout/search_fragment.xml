@@ -24,7 +24,8 @@
             android:fontFamily="sans-serif"
             android:imeOptions="actionDone"
             android:inputType="text"
-            android:hint="Jubilee Diamond" />
+            android:textSize="24sp"
+            android:hint="Search by Id" />
     </LinearLayout>
 
     <TextView

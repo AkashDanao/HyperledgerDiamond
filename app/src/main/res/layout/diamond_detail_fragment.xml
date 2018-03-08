@@ -12,8 +12,11 @@
         android:weightSum="10">
 
         <ImageView
+            android:layout_margin="10dp"
+            android:id="@+id/imageViewDiamond"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="wrap_content"
             android:layout_weight="2" />
 
         <LinearLayout
@@ -25,11 +28,12 @@
             android:weightSum="2">
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/textViewDiamondTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Red Diamond"
+                android:text="-"
                 android:layout_marginBottom="10dp"
                 android:textSize="16sp" />
 
@@ -39,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginBottom="10dp"
-                android:text="#313131"
+                android:text="-"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
@@ -62,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="IGI"
+            android:text="-"
             android:textColor="#fff"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -92,7 +96,7 @@
         <TextView
             android:id="@+id/textViewClarity"
             android:layout_margin="10dp"
-            android:text="CHIP FEATHER"
+            android:text="-"
             android:gravity="left"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -116,7 +120,7 @@
         <TextView
             android:id="@+id/textViewColor"
             android:layout_margin="10dp"
-            android:text="CHIP FEATHER"
+            android:text="-"
             android:gravity="left"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -140,7 +144,7 @@
         <TextView
             android:id="@+id/textViewCut"
             android:layout_margin="10dp"
-            android:text="CHIP FEATHER"
+            android:text="-"
             android:gravity="left"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -164,7 +168,7 @@
         <TextView
             android:id="@+id/textViewCarat"
             android:layout_margin="10dp"
-            android:text="CHIP FEATHER"
+            android:text="-"
             android:gravity="left"
             android:layout_width="0dp"
             android:layout_height="match_parent"

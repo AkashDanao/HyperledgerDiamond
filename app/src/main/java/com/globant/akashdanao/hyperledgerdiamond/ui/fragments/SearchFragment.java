@@ -48,9 +48,8 @@ public class SearchFragment extends Fragment {
                             bundle.putString("RECORD_NUMBER", editTextSearch.getText().toString());
                             fragment.setArguments(bundle);
                             final FragmentTransaction ft = getFragmentManager().beginTransaction();
-                            ft.replace(R.id.fl_home, fragment, "DiamondDetails");
+                            ft.replace(R.id.fl_home, fragment, fragment.getClass().getName());
                             ft.commit();
-                            ft.addToBackStack(null);
                         }
                         break;
                 }

@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
-import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.RecordsAdapter;
 import com.globant.akashdanao.hyperledgerdiamond.utils.PicassoCircleTransformation;
 import com.squareup.picasso.Picasso;
@@ -72,7 +71,6 @@ public class LandingFragment extends Fragment {
         super.onResume();
         ApiClient.instance.getAllDiamonds()
                 .flatMap(Flowable::fromIterable)
-                .map(Diamond::getRecord)
                 .toList()
                 .toFlowable()
                 .subscribeOn(Schedulers.io())
@@ -92,8 +90,8 @@ public class LandingFragment extends Fragment {
         recyclerViewDiamond.setLayoutManager(layoutManager);
     }
 
-    private void bindDataToRecyclerView(List<Record> records) {
-        recordsAdapter = new RecordsAdapter(records);
+    private void bindDataToRecyclerView(List<Diamond> diamond) {
+        recordsAdapter = new RecordsAdapter(diamond);
         recyclerViewDiamond.setAdapter(recordsAdapter);
     }
     private void handleError(Throwable throwable) {
