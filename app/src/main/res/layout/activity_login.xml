@@ -12,7 +12,8 @@
         android:id="@+id/ll_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/form_group_padding">
+        android:paddingTop="@dimen/form_group_padding"
+        android:paddingBottom="20dp">
 
         <ImageView
             android:id="@+id/iv_icon"
@@ -38,7 +39,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_header"
-        android:paddingBottom="@dimen/form_group_padding"
+        android:id="@+id/rl_fingerprint"
+        android:layout_marginBottom="40dp"
         >
 
         <TextView
@@ -56,7 +58,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_welcome"
-            android:text="@string/fingerprint_text_1" />
+            android:text="@string/fingerprint_text_1"
+            android:textSize="@dimen/text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,13 +68,15 @@
             android:layout_toRightOf="@+id/tv_fingerprint_text"
             android:text="@string/fingerprint"
             android:paddingLeft="@dimen/form_element_padding"
-            android:textColor="@color/colorPrimaryDark"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_fingerprint_text"
-            android:text="@string/fingerprint_text_2" />
+            android:text="@string/fingerprint_text_2"
+            android:textSize="@dimen/text"/>
 
 
     </RelativeLayout>
@@ -79,8 +84,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/rl_fingerprint">
 
         <EditText
             android:id="@+id/et_username"
@@ -106,7 +111,9 @@
                 android:id="@+id/bt_login"
                 android:layout_width="@dimen/button_width"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:background="@drawable/button_background"
                 android:text="@string/login"
                 android:textColor="@color/colorPrimaryDark" />

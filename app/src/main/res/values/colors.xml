@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#7540ee</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorCreate">#FF6347</color>
+    <color name="colorLine">#cdced2</color>
 
     <color name="color_button_background">#DFDFE4</color>
     <color name="certification_gia_button_color">#00D85A</color>
@@ -16,6 +17,7 @@
     <color name="certification_hrd_button_color_light">#E9F9F0</color>
 
 
-    
+
+
 
 </resources>
