@@ -79,14 +79,14 @@ public class AddDiamondActivity extends AppCompatActivity implements SwitchButto
     }
 
 
-   /* @OnClick(R.id.bt_create)
-    public void onClickAdd() {
-
-        ApiClient.instance.saveRecord(id.getText().toString(), holderName.getText().toString(), Long.parseLong(latitude.getText().toString()), Long.parseLong(longitude.getText().toString()), Long.parseLong(timeStamp.getText().toString()), vessel.getText().toString())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        id -> Toast.makeText(this, "Record Added Successfully", Toast.LENGTH_SHORT).show(),
-                        e -> Toast.makeText(this, "There is some error", Toast.LENGTH_SHORT).show());
-    }*/
+//   @OnClick(R.id.bt_create)
+//    public void onClickAdd() {
+//
+//        ApiClient.instance.saveRecord(et_diamond_name.getText().toString(), holderName.getText().toString(), Long.parseLong(latitude.getText().toString()), Long.parseLong(longitude.getText().toString()), Long.parseLong(timeStamp.getText().toString()), vessel.getText().toString())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        id -> Toast.makeText(this, "Record Added Successfully", Toast.LENGTH_SHORT).show(),
+//                        e -> Toast.makeText(this, "There is some error", Toast.LENGTH_SHORT).show());
+//    }
 }

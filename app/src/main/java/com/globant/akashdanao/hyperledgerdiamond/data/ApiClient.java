@@ -47,6 +47,13 @@ public enum ApiClient {
         return diamondService.saveRecord(url);
     }
 
+
+    // id , color, cut, carat, clarity, certification, name
+    public Flowable<String> saveDiamondRecord(String id, String color, String cut, String carat, String clarity, String certification, String name) {
+        String url = "/add_tuna/" + id + "-" + color + "-" + cut + ", " + carat + "-" + clarity + "-" + certification + "-" + name;
+        return diamondService.saveRecord(url);
+    }
+
     public static class StringConverterFactory extends Converter.Factory {
         private static final MediaType MEDIA_TYPE = MediaType.parse("text/plain");
 

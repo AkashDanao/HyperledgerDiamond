@@ -29,6 +29,7 @@
     <string name="diamond_color">Color</string>
     <string name="diamond_cut">Cut</string>
     <string name="diamond_carat">Carat</string>
+    <string name="diamond_id">Id</string>
     <string name="diamond_certification">CHOOSE CERTIFICATION</string>
     <string name="diamond_add_record">Add Record</string>
     <string name="diamond_certification_gia">GIA</string>

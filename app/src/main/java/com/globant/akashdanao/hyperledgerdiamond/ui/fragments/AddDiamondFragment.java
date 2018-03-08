@@ -4,21 +4,31 @@ package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
+import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
 import com.suke.widget.SwitchButton;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheckedChangeListener{
+public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheckedChangeListener {
 
     @BindView(R.id.sb_igi)
     SwitchButton sbIGI;
@@ -34,7 +44,16 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     TextInputEditText etColor;
     @BindView(R.id.et_cut)
     TextInputEditText etCut;
+    @BindView(R.id. et_new_record)
+    TextInputEditText et_diamond_name;
 
+    @BindView(R.id.et_diamond_id)
+    TextInputEditText et_diamond_id;
+
+    String certification;
+    String TAG = AddDiamondFragment.class.getSimpleName();
+
+    HashMap<String, String> mapCertification = new HashMap<>();
 
     public AddDiamondFragment() {
         // Required empty public constructor
@@ -56,10 +75,25 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     public void onCheckedChanged(SwitchButton view, boolean isChecked) {
         switch (view.getId()) {
             case R.id.sb_gia:
+                if (isChecked){
+                    mapCertification.put(Constants.GIA, Constants.GIA);
+                }else {
+                    mapCertification.remove(Constants.GIA);
+                }
                 break;
             case R.id.sb_hrd:
+                if (isChecked){
+                    mapCertification.put(Constants.HRD, Constants.HRD);
+                }else {
+                    mapCertification.remove(Constants.HRD);
+                }
                 break;
             case R.id.sb_igi:
+                if (isChecked){
+                    mapCertification.put(Constants.IGI, Constants.IGI);
+                }else {
+                    mapCertification.remove(Constants.IGI);
+                }
                 break;
         }
     }
@@ -71,17 +105,18 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
 
     @OnClick(R.id.button_add_record)
     public void onAddRecordButtonClick() {
+        certification = "";
+        for (Map.Entry<String, String> entry: mapCertification.entrySet()) {
+            certification = certification + "," + entry.getValue();
+        }
+        Log.d(TAG, "onAddRecordButtonClick: " + certification);
+        // id , color, cut, carat, clarity, certification, name
+//        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        id -> Toast.makeText(getActivity(), "Record Added Successfully", Toast.LENGTH_SHORT).show(),
+//                        e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
+
     }
-
-    /* @OnClick(R.id.bt_create)
-    public void onClickAdd() {
-
-        ApiClient.instance.saveRecord(id.getText().toString(), holderName.getText().toString(), Long.parseLong(latitude.getText().toString()), Long.parseLong(longitude.getText().toString()), Long.parseLong(timeStamp.getText().toString()), vessel.getText().toString())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        id -> Toast.makeText(this, "Record Added Successfully", Toast.LENGTH_SHORT).show(),
-                        e -> Toast.makeText(this, "There is some error", Toast.LENGTH_SHORT).show());
-    }*/
-
 }

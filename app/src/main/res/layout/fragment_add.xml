@@ -41,6 +41,13 @@
             android:layout_marginTop="@dimen/default_margin_small"
             android:text="@string/diamond_information" />
 
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_diamond_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin_small"
+            android:hint="@string/diamond_id" />
+
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/et_clarity"
