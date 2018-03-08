@@ -14,23 +14,21 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity android:name=".ui.activities.HomeActivity" />
         <activity
-            android:name=".ui.activities.LoginActivity"
-            android:hardwareAccelerated="false">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ui.activities.AddDiamondActivity" />
-        <activity android:name=".ui.activities.DiamondDetailsActivity" />
-        <activity android:name=".ui.activities.SplashActivity">
+            android:name=".ui.activities.LoginActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".ui.activities.AddDiamondActivity" />
+        <activity android:name=".ui.activities.DiamondDetailsActivity" />
+        <activity android:name=".ui.activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
