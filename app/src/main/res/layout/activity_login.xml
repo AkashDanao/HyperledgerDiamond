@@ -116,7 +116,9 @@
                 android:layout_alignParentTop="true"
                 android:background="@drawable/button_background"
                 android:text="@string/login"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -142,14 +144,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="@dimen/form_element_padding"
-            android:text="@string/no_account" />
+            android:text="@string/no_account"
+            android:textSize="@dimen/text"/>
 
         <TextView
             android:id="@+id/tv_create_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/create_account"
-            android:textColor="@color/colorCreate" />
+            android:textColor="@color/colorCreate"
+            android:textSize="@dimen/text"/>
 
     </LinearLayout>
 </RelativeLayout>
