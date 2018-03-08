@@ -39,7 +39,7 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
 
         fragmentManager =  getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-        loadFragment(new LandingFragment());
+        loadFirstFragment(new LandingFragment());
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener onNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener(){
@@ -70,6 +70,12 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_home, fragment);
         transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    private void loadFirstFragment(android.support.v4.app.Fragment fragment) {
+        android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fl_home, fragment);
         transaction.commit();
     }
 

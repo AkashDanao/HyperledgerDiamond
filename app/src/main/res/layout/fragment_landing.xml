@@ -25,7 +25,8 @@
             android:layout_centerVertical="true"
             android:text="Hi, user"
             android:textStyle="bold"
-            android:textSize="@dimen/title"/>
+            android:textSize="@dimen/text_large"
+            android:textColor="@android:color/black"/>
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView

@@ -16,8 +16,8 @@
     <color name="certification_hrd_button_color">#FF7052</color>
     <color name="certification_hrd_button_color_light">#E9F9F0</color>
 
-
-
+    <color name="color_diamond_name">#919191</color>
+    <color name="color_diamond_id">#452235</color>
 
 
 </resources>

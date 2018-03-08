@@ -27,14 +27,18 @@
                 android:id="@+id/tv_holder_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_small"
+                android:textColor="@color/color_diamond_name"/>
 
             <TextView
                 android:id="@+id/tv_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/form_element_spacing"
-                android:layout_gravity="center"/>
+                android:layout_marginTop="@dimen/vertical_padding"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_medium"
+                android:textColor="@color/color_diamond_id"/>
 
         </LinearLayout>
 
