@@ -59,7 +59,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_welcome"
             android:text="@string/fingerprint_text_1"
-            android:textSize="@dimen/text"/>
+            android:textSize="@dimen/text"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +70,8 @@
             android:text="@string/fingerprint"
             android:paddingLeft="@dimen/form_element_padding"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/text"/>
+            android:textSize="@dimen/text"
+            />
 
         <TextView
             android:layout_width="wrap_content"
