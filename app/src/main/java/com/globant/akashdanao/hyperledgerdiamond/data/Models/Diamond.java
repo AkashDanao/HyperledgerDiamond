@@ -1,3 +1,4 @@
+
 package com.globant.akashdanao.hyperledgerdiamond.data.Models;
 
 import com.google.gson.annotations.Expose;
@@ -8,7 +9,6 @@ public class Diamond {
     @SerializedName("Key")
     @Expose
     private String key;
-
     @SerializedName("Record")
     @Expose
     private Record record;
@@ -28,4 +28,5 @@ public class Diamond {
     public void setRecord(Record record) {
         this.record = record;
     }
+
 }

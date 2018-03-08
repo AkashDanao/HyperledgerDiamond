@@ -1,6 +1,7 @@
 package com.globant.akashdanao.hyperledgerdiamond.data;
 
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
+import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -25,7 +26,7 @@ public enum ApiClient {
     DiamondService diamondService;
 
     ApiClient() {
-        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).setLenient().create();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
@@ -45,6 +46,10 @@ public enum ApiClient {
     public Flowable<String> saveRecord(String id, String holder, long latitude, long longitude, long timeStamp, String vessel) {
         String url = "/add_tuna/" + id + "-" + latitude + ", " + longitude + "-" + timeStamp + "-" + holder + "-" + vessel;
         return diamondService.saveRecord(url);
+    }
+
+    public Flowable<Record> searchRecord(String recordId) {
+        return diamondService.searchRecord("/get_tuna/" + recordId);
     }
 
     public static class StringConverterFactory extends Converter.Factory {

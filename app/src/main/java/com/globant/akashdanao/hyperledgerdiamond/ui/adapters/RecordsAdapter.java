@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -56,9 +55,9 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecordsAdapter.ViewHold
         }
 
         public void bind(Record record) {
-            holderName.setText(record.getHolder());
-            size.setText(record.getVessel());
-            Picasso.with(itemView.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
+//            holderName.setText(record.getHolder());
+//            size.setText(record.getVessel());
+//            Picasso.with(itemView.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
         }
     }
 }
