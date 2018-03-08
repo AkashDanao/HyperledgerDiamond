@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
@@ -23,7 +22,10 @@
             android:drawableLeft="@drawable/ic_search"
             android:drawablePadding="10dp"
             android:fontFamily="sans-serif"
-            android:hint="Jubilee Diamond" />
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="24sp"
+            android:hint="Search by Id" />
     </LinearLayout>
 
     <TextView
@@ -33,10 +35,10 @@
         android:fontFamily="sans-serif-light"
         android:letterSpacing="0.04"
         android:textAllCaps="true"
-        android:textColor="#000000"
+        android:textColor="#787993"
         android:textSize="14sp"
         android:textStyle="normal"
-        tools:text="Search history" />
+        android:text="Search history" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewSearchHistory"

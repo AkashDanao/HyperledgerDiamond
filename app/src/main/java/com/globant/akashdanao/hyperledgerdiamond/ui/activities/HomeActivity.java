@@ -1,11 +1,12 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.activities;
 
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
@@ -69,7 +70,6 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
     private void loadFragment(android.support.v4.app.Fragment fragment) {
         android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_home, fragment);
-        transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -77,6 +77,19 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         android.support.v4.app.FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fl_home, fragment);
         transaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Fragment f = getSupportFragmentManager().findFragmentById(R.id.fl_home);
+        if (!f.getClass().getName().equalsIgnoreCase(LandingFragment.class.getName())) {
+            Fragment fragment = new LandingFragment();
+            loadFragment(fragment);
+            bottomNavigationView.setSelectedItemId(R.id.action_diamond);
+        } else {
+            finish();
+        }
+
     }
 
     @Override

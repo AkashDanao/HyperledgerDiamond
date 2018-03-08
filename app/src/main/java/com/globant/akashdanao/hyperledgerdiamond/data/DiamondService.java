@@ -1,6 +1,7 @@
 package com.globant.akashdanao.hyperledgerdiamond.data;
 
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
+import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface DiamondService {
 
    @GET
    Flowable<String> saveRecord(@Url String url);
+
+    @GET
+    Flowable<Record> searchRecord(@Url String url);
 }
