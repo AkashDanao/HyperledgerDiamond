@@ -62,10 +62,19 @@
                     android:text="@string/diamond_information" />
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_holder_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="@dimen/default_margin_small"
+                    android:hint="@string/holder_name" />
+
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/et_diamond_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin_small"
+                    android:textAllCaps="false"
                     android:hint="@string/diamond_id" />
 
 
@@ -74,6 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin_small"
+                    android:textAllCaps="false"
                     android:hint="@string/diamond_clarity" />
 
                 <android.support.design.widget.TextInputEditText
@@ -81,6 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin_small"
+                    android:textAllCaps="false"
                     android:hint="@string/diamond_color" />
 
                 <android.support.design.widget.TextInputEditText
@@ -88,6 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin_small"
+                    android:textAllCaps="false"
                     android:hint="@string/diamond_cut" />
 
                 <android.support.design.widget.TextInputEditText
@@ -95,6 +107,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin_small"
+                    android:textAllCaps="false"
                     android:hint="@string/diamond_carat" />
 
                 <TextView

@@ -116,7 +116,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CLARITY" />
+                    android:text="Clarity" />
 
                 <TextView
                     android:id="@+id/textViewClarity"
@@ -145,7 +145,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="COLOR" />
+                    android:text="Color" />
 
                 <TextView
                     android:id="@+id/textViewColor"
@@ -174,7 +174,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CUT" />
+                    android:text="Cut" />
 
                 <TextView
                     android:id="@+id/textViewCut"
@@ -203,7 +203,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CARAT" />
+                    android:text="Carat" />
 
                 <TextView
                     android:id="@+id/textViewCarat"
@@ -232,7 +232,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="Holer Name" />
+                    android:text="Holder Name" />
 
                 <TextView
                     android:id="@+id/textViewHolderName"

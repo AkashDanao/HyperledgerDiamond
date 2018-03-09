@@ -31,6 +31,19 @@ public class Record {
     @Expose
     private String holder_name;
 
+    @SerializedName("timeStamp")
+    @Expose
+    private String time_stamp;
+
+
+    public String getTime_stamp() {
+        return time_stamp;
+    }
+
+    public void setTime_stamp(String time_stamp) {
+        this.time_stamp = time_stamp;
+    }
+
     public String getHolder_name() {
         return holder_name;
     }
