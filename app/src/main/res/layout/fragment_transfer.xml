@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.globant.akashdanao.hyperledgerdiamond.ui.fragments.TransferFragment">
+
+    <LinearLayout
+        android:id="@+id/ll_transfer_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/vertical_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer_title"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/transfer_title"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transfer_subtit_title"
+            android:textColor="@color/color_transfer_diamond"
+            android:textSize="@dimen/sub_title" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ll_transfer_header"
+        android:background="@color/colorLine">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="@dimen/vertical_padding">
+
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_edit_text_height"
+            android:layout_marginTop="@dimen/form_element_spacing"
+            android:background="@drawable/rounded_corner_background"
+            android:hint="@string/hint_id"
+            android:paddingLeft="@dimen/form_element_padding"
+            android:textSize="@dimen/text_medium"/>
+
+        <EditText
+            android:id="@+id/et_holder_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/login_edit_text_height"
+            android:layout_marginTop="@dimen/form_element_spacing"
+            android:background="@drawable/rounded_corner_background"
+            android:hint="@string/hint_holder_name"
+            android:paddingLeft="@dimen/form_element_padding"
+            android:textSize="@dimen/text_medium"/>
+
+        <Button
+            android:id="@+id/button_change_holder"
+            android:layout_width="@dimen/button_record_add_width"
+            android:layout_height="@dimen/button_record_add_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/default_margin"
+            android:background="@drawable/button_add_record_rounded"
+            android:text="@string/diamond_change_holder"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</RelativeLayout>

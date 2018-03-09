@@ -15,6 +15,7 @@ import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.AddDiamondFragment
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.LandingFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.SearchFragment;
 import com.globant.akashdanao.hyperledgerdiamond.utils.BottomNavigationViewHelper;
+import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.TransferFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +29,6 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
     @BindView(R.id.bottom_navigation)
     BottomNavigationView bottomNavigationView;
 
-    LandingFragment loadingFragment;
     android.support.v4.app.FragmentTransaction transaction;
     FragmentManager fragmentManager;
 
@@ -62,7 +62,10 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
                     fragment = new SearchFragment();
                     loadFragment(fragment);
                     return true;
-
+                case R.id.action_transfer :
+                    fragment = new TransferFragment();
+                    loadFragment(fragment);
+                    return true;
             }
             return false;
         }

@@ -18,6 +18,7 @@
 
     <color name="color_diamond_name">#919191</color>
     <color name="color_diamond_id">#452235</color>
-
+    <color name="color_transfer_diamond">#8c8c8c</color>
+    <color name="editext_border">#e5eced</color>
 
 </resources>

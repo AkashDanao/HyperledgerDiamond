@@ -59,6 +59,11 @@ public enum ApiClient {
         return diamondService.searchRecord("/get_tuna/" + recordId);
     }
 
+    public Flowable<String> changeHolderName(String id, String name){
+        String url = "/change_holder/" + id + "-" + name;
+        return diamondService.changeHolderName(url);
+    }
+
     public static class StringConverterFactory extends Converter.Factory {
         private static final MediaType MEDIA_TYPE = MediaType.parse("text/plain");
 

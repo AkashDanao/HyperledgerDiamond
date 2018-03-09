@@ -3,15 +3,11 @@
     <string name="login">Login</string>
     <string name="hint_username">Email Address</string>
     <string name="hint_password">Password</string>
-    <string name="hint_id">Enter Tuna id</string>
-    <string name="hint_vessel">Enter Vessel name</string>
-    <string name="hint_longitude">Enter Longitude</string>
-    <string name="hint_latitude">Enter Latitude</string>
+    <string name="hint_id">Enter Diamond id</string>
     <string name="hint_timestamp">Enter Timestamp</string>
     <string name="hint_holder_name">Enter Holder name</string>
     <string name="diamond_add_title">Create Tuna Record</string>
     <string name="create_record">Create</string>
-    <string name="diamond_details_title">Tuna Details</string>
     <string name="forgot_password"><u>Forgot Password?</u></string>
     <string name="no_account">Still without account?</string>
     <string name="create_account"> <u>Create One</u></string>
@@ -36,7 +32,11 @@
     <string name="diamond_certification_igi">IGI</string>
     <string name="diamond_certification_hrd">HRD</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Change -->
+    <string name="transfer_title">Transfer</string>
+    <string name="transfer_subtit_title">Change Diamond Ownership</string>
+    <string name="diamond_change_holder">Change</string>
+    <string name="change_holder_success">Change holder name successfully</string>
+    <string name="change_holder_error">Please enter valid Diamond id</string>
 
 </resources>
