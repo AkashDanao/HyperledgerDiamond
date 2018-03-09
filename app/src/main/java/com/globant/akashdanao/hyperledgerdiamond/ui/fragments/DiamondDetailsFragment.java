@@ -46,6 +46,8 @@ public class DiamondDetailsFragment extends Fragment {
     ImageView imageViewDiamond;
     @BindView(R.id.viewFlipper)
     ViewFlipper viewFlipper;
+    @BindView(R.id.textViewHolderName)
+    TextView textViewHolderName;
 
     @Nullable
     @Override
@@ -75,6 +77,7 @@ public class DiamondDetailsFragment extends Fragment {
         textViewDiamondNumber.setText("#" + getArguments().getString("RECORD_NUMBER"));
         textViewTransactionHash.setText(record.getTransid());
         textViewCut.setText(record.getCut());
+        textViewHolderName.setText(record.getHolder_name());
         Picasso.with(view.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
     }
 
