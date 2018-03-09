@@ -27,6 +27,17 @@ public class Record {
     @SerializedName("transid")
     @Expose
     private String transid;
+    @SerializedName("holdername")
+    @Expose
+    private String holder_name;
+
+    public String getHolder_name() {
+        return holder_name;
+    }
+
+    public void setHolder_name(String holder_name) {
+        this.holder_name = holder_name;
+    }
 
     public String getCarat() {
         return carat;
