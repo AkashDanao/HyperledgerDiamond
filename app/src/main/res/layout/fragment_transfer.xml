@@ -4,21 +4,21 @@
     android:layout_height="match_parent"
     tools:context="com.globant.akashdanao.hyperledgerdiamond.ui.fragments.TransferFragment">
 
-    <!--<ViewFlipper-->
-    <!--android:id="@+id/viewFlipper"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent">-->
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--<RelativeLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:background="@drawable/ic_dia_2">-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_dia_2">
 
-    <!--<ProgressBar-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_centerInParent="true" />-->
-    <!--</RelativeLayout>-->
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
