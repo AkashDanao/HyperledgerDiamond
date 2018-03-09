@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="corner_radius">25dp</dimen>
+    <dimen name="corner_radius">10dp</dimen>
     <dimen name="form_element_spacing">15dp</dimen>
 
     <!-- width and height -->
@@ -25,6 +25,7 @@
     <!-- text size -->
     <dimen name="add_new_record_hint_size">24sp</dimen>
     <dimen name="title">24sp</dimen>
+    <dimen name="transfer_title">26sp</dimen>
     <dimen name="sub_title">18sp</dimen>
     <dimen name="text">16sp</dimen>
     <dimen name="certification_text_size">10sp</dimen>

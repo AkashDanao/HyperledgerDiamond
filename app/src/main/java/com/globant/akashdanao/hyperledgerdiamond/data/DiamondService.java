@@ -18,4 +18,7 @@ public interface DiamondService {
 
     @GET
     Flowable<Record> searchRecord(@Url String url);
+
+    @GET
+    Flowable<String> changeHolderName (@Url String url);
 }
