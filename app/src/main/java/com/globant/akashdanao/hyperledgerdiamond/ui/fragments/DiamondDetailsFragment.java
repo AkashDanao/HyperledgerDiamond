@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
@@ -43,12 +44,15 @@ public class DiamondDetailsFragment extends Fragment {
     TextView textViewCarat;
     @BindView(R.id.imageViewDiamond)
     ImageView imageViewDiamond;
+    @BindView(R.id.viewFlipper)
+    ViewFlipper viewFlipper;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.diamond_detail_fragment, null);
         ButterKnife.bind(this, view);
+        viewFlipper.setDisplayedChild(0);
         ApiClient.instance.searchRecord(getArguments().getString("RECORD_NUMBER"))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -62,6 +66,7 @@ public class DiamondDetailsFragment extends Fragment {
     }
 
     private void bindDataToView(Record record) {
+        viewFlipper.setDisplayedChild(1);
         textViewDiamondTitle.setText(record.getName());
         textViewCarat.setText(record.getCarat());
         textViewCertificationName.setText(record.getCert());

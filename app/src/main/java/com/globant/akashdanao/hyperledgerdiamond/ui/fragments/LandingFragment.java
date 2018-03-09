@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
@@ -47,6 +48,9 @@ public class LandingFragment extends Fragment {
 
     private  RecordsAdapter recordsAdapter;
 
+    @BindView(R.id.viewFlipper)
+    ViewFlipper viewFlipper;
+
 
     public LandingFragment() {
         // Required empty public constructor
@@ -69,6 +73,7 @@ public class LandingFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        viewFlipper.setDisplayedChild(0);
         ApiClient.instance.getAllDiamonds()
                 .flatMap(Flowable::fromIterable)
                 .toList()
@@ -91,6 +96,7 @@ public class LandingFragment extends Fragment {
     }
 
     private void bindDataToRecyclerView(List<Diamond> diamond) {
+        viewFlipper.setDisplayedChild(1);
         recordsAdapter = new RecordsAdapter(diamond);
         recyclerViewDiamond.setAdapter(recordsAdapter);
     }
