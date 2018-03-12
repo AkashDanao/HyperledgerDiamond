@@ -116,7 +116,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:background="@drawable/button_background"
+                android:background="@drawable/login_button_background"
                 android:text="@string/login"
                 android:textColor="@color/colorPrimaryDark"
                 android:textAllCaps="false"
