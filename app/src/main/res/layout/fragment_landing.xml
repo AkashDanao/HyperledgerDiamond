@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:text="Hi, user"
+                    android:text="@string/user_placeholder"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/text_large"
                     android:textStyle="bold" />

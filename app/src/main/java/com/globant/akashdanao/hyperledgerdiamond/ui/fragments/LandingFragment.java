@@ -63,7 +63,7 @@ public class LandingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_landing, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(getActivity()).load(R.drawable.avatar_placeholder)
+        Picasso.with(getActivity()).load(R.drawable.userpic)
                 .transform(new PicassoCircleTransformation()).into((imageViewUser));
         init();
         // Inflate the layout for this fragment

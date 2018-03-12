@@ -38,5 +38,6 @@
     <string name="diamond_change_holder">Change</string>
     <string name="change_holder_success">Change holder name successfully</string>
     <string name="change_holder_error">Please enter valid Diamond id</string>
+    <string name="user_placeholder">Hi, John</string>
 
 </resources>
