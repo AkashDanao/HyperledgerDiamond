@@ -50,6 +50,8 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     ViewFlipper viewFlipper;
     @BindView(R.id.et_diamond_id)
     TextInputEditText et_diamond_id;
+    @BindView(R.id.et_holder_name)
+    TextInputEditText et_holder_name;
 
     String certification;
     String TAG = AddDiamondFragment.class.getSimpleName();
@@ -118,7 +120,7 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
         Log.d(TAG, "onAddRecordButtonClick: " + certification);
         // id , color, cut, carat, clarity, certification, name
         viewFlipper.setDisplayedChild(0);
-        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString())
+        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString(), et_holder_name.getText().toString())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

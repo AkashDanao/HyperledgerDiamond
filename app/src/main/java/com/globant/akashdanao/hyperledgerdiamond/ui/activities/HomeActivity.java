@@ -15,6 +15,7 @@ import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.AddDiamondFragment
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.LandingFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.SearchFragment;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.TransferFragment;
+import com.globant.akashdanao.hyperledgerdiamond.utils.BottomNavigationViewHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,7 +38,7 @@ public class HomeActivity extends AppCompatActivity implements LandingFragment.O
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
-
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         fragmentManager =  getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         loadFirstFragment(new LandingFragment());

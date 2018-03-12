@@ -116,7 +116,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CLARITY" />
+                    android:text="Clarity" />
 
                 <TextView
                     android:id="@+id/textViewClarity"
@@ -145,7 +145,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="COLOR" />
+                    android:text="Color" />
 
                 <TextView
                     android:id="@+id/textViewColor"
@@ -174,7 +174,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CUT" />
+                    android:text="Cut" />
 
                 <TextView
                     android:id="@+id/textViewCut"
@@ -203,10 +203,39 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text="CARAT" />
+                    android:text="Carat" />
 
                 <TextView
                     android:id="@+id/textViewCarat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="-" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorLine" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="Holder Name" />
+
+                <TextView
+                    android:id="@+id/textViewHolderName"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
