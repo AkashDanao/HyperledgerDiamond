@@ -35,7 +35,7 @@
     <!-- Change -->
     <string name="transfer_title">Transfer</string>
     <string name="transfer_subtit_title">Change Diamond Ownership</string>
-    <string name="diamond_change_holder">Change</string>
+    <string name="diamond_change_holder">Transfer</string>
     <string name="change_holder_success">Change holder name successfully</string>
     <string name="change_holder_error">Please enter valid Diamond id</string>
     <string name="user_placeholder">Hi, John</string>

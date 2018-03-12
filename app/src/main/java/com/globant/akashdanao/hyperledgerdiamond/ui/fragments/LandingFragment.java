@@ -20,6 +20,7 @@ import com.globant.akashdanao.hyperledgerdiamond.ui.adapters.RecordsAdapter;
 import com.globant.akashdanao.hyperledgerdiamond.utils.PicassoCircleTransformation;
 import com.squareup.picasso.Picasso;
 
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
