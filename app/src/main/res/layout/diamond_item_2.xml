@@ -30,12 +30,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:textSize="@dimen/text_medium"
                 android:textColor="@android:color/black" />
 
             <TextView
                 android:id="@+id/tv_diamond_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_medium"
                 android:paddingTop="@dimen/vertical_padding" />
 
         </LinearLayout>
