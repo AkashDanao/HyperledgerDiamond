@@ -49,16 +49,25 @@ public class TransferFragment extends Fragment {
 
     @OnClick(R.id.button_change_holder)
     public void onChangeHolder() {
-        viewFlipper.setDisplayedChild(0);
-        ApiClient.instance.changeHolderName(etDiamondId.getText().toString(), etHolderName.getText().toString())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        id -> {
-                            viewFlipper.setDisplayedChild(1);
-                            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_success), Toast.LENGTH_SHORT).show();
-                        },
-                        e -> Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_error), Toast.LENGTH_SHORT).show()
-                );
+        String diamondId = etDiamondId.getText().toString().trim();
+        String holderName = etHolderName.getText().toString().trim();
+        if (diamondId.equalsIgnoreCase("")){
+            etDiamondId.setError("Required field");
+        }else if(holderName.equalsIgnoreCase("")){
+            etHolderName.setError("Required field");
+        }else {
+            viewFlipper.setDisplayedChild(0);
+            ApiClient.instance.changeHolderName(diamondId, holderName)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            id -> {
+                                viewFlipper.setDisplayedChild(1);
+                                Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_success), Toast.LENGTH_SHORT).show();
+                            },
+                            e -> Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_error), Toast.LENGTH_SHORT).show()
+                    );
+        }
+
     }
 }
