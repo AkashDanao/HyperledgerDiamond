@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.globant.akashdanao.hyperledgerdiamond.R;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Utility;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,8 +33,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.bt_login)
     public void onClickLogin(View v) {
-        if (et_username.getText().toString().equalsIgnoreCase("")) {
-            et_username.setError("Required field");
+        String email = et_username.getText().toString().trim();
+        if (!Utility.isValidEmail(email)) {
+            et_username.setError("Please enter valid email id");
         } else if (et_password.getText().toString().equalsIgnoreCase("")) {
             et_password.setError("Required field");
         } else if (!et_password.getText().toString().equalsIgnoreCase("123456")) {
