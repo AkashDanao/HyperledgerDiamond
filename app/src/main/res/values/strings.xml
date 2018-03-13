@@ -40,4 +40,5 @@
     <string name="change_holder_error">Please enter valid Diamond id</string>
     <string name="user_placeholder">Hi, John</string>
     <string name="holder_name">Holder Name</string>
+    <string name="all_records">All Records</string>
 </resources>
