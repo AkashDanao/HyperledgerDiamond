@@ -35,6 +35,10 @@ public class Record {
     @Expose
     private String time_stamp;
 
+    @SerializedName("type")
+    @Expose
+    private String type;
+
 
     public String getTime_stamp() {
         return time_stamp;
@@ -108,4 +112,11 @@ public class Record {
         this.transid = transid;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

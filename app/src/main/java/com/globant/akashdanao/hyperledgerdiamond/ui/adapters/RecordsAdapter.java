@@ -5,14 +5,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.amulyakhare.textdrawable.TextDrawable;
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.DiamondDetailsFragment;
@@ -36,10 +34,10 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        if (viewType == Constants.ITEM_ONE){
+        if (viewType == Constants.ITEM_ONE) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.diamond_item, parent, false);
             return new ViewHolderDefault(view);
-        }else {
+        } else {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.diamond_item_2, parent, false);
             return new ViewHolder(view);
         }
@@ -50,7 +48,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         Diamond diamond = diamondList.get(position);
         switch (holder.getItemViewType()) {
             case Constants.ITEM_ONE:
-                ViewHolderDefault viewHolderDefault  = (ViewHolderDefault) holder;
+                ViewHolderDefault viewHolderDefault = (ViewHolderDefault) holder;
                 viewHolderDefault.bind(diamond);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -144,12 +142,15 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         public void bind(Diamond diamond) {
-            Log.d(TAG, "bind: " + diamond.getRecord().getName());
             tvDiamondName.setText(diamond.getRecord().getName());
             tvDimondId.setText("#" + diamond.getKey());
-            TextDrawable drawable = TextDrawable.builder()
-                    .buildRound(Character.toString(diamond.getRecord().getName().charAt(0)), R.color.colorPrimaryDark);
-            imageViewIcon.setImageDrawable(drawable);
+            int drawableId;
+            if (diamond.getRecord().getType().equalsIgnoreCase(Constants.ADD)) {
+                drawableId = R.drawable.diamond_add_background;
+            } else {
+                drawableId = R.drawable.drawable_transfer_background;
+            }
+            imageViewIcon.setImageDrawable(itemView.getContext().getResources().getDrawable(drawableId));
         }
     }
 }

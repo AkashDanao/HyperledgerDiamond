@@ -8,4 +8,6 @@ public class Constants {
     public static final String HRD = "HRD";
     public static final int ITEM_ONE = 1;
     public static final int ITEM_TWO = 2;
+    public static final String ADD = "Add";
+    public static final String TRANSFER = "Transfer";
 }
