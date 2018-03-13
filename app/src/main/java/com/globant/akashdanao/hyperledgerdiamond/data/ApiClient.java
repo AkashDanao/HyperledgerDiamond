@@ -51,7 +51,7 @@ public enum ApiClient {
 
     // id , color, cut, carat, clarity, certification, name
     public Flowable<String> saveDiamondRecord(String id, String color, String cut, String carat, String clarity, String certification, String name, String holdername) {
-        String url = "/add_tuna/" + id + "-" + color + "-" + cut + "-" + carat + "-" + clarity + "-" + certification + "-" + name + "-" + holdername + "-" + (System.currentTimeMillis() / 1000);
+        String url = "/add_tuna/" + id + "-" + color + "-" + cut + "-" + carat + "-" + clarity + "-" + certification + "-" + name + "-" + holdername + "-" + (System.currentTimeMillis() / 1000) + "-" + Constants.ADD;
         return diamondService.saveRecord(url);
     }
 
@@ -60,7 +60,7 @@ public enum ApiClient {
     }
 
     public Flowable<String> changeHolderName(String id, String name) {
-        String url = "/change_holder/" + id + "-" + name + "-" + (System.currentTimeMillis() / 1000);
+        String url = "/change_holder/" + id + "-" + name + "-" + (System.currentTimeMillis() / 1000 + "-" + Constants.TRANSFER);
         return diamondService.changeHolderName(url);
     }
 
