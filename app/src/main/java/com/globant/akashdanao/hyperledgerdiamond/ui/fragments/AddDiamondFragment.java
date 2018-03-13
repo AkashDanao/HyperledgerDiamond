@@ -1,6 +1,7 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -56,6 +58,7 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
 
     String certification;
     String TAG = AddDiamondFragment.class.getSimpleName();
+    private View view;
 
     HashMap<String, String> mapCertification = new HashMap<>();
 
@@ -67,7 +70,7 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add, container, false);
+        view = inflater.inflate(R.layout.fragment_add, container, false);
         ButterKnife.bind(this, view);
         viewFlipper.setDisplayedChild(1);
         sbIGI.setOnCheckedChangeListener(this);
@@ -110,6 +113,7 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
 
     @OnClick(R.id.button_add_record)
     public void onAddRecordButtonClick() {
+        hideKeyBoard();
         certification = "";
         for (Map.Entry<String, String> entry : mapCertification.entrySet()) {
             if (certification.equalsIgnoreCase("")) {
@@ -138,5 +142,12 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
                         },
                         e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
 
+    }
+
+    public void hideKeyBoard() {
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }

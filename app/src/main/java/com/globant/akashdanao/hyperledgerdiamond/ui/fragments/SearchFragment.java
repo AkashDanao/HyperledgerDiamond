@@ -1,5 +1,6 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -42,6 +44,7 @@ public class SearchFragment extends Fragment {
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 switch (actionId) {
                     case EditorInfo.IME_ACTION_DONE:
+                        hideKeyBoard();
                         if (!editTextSearch.getText().toString().equalsIgnoreCase("")) {
                             DiamondDetailsFragment fragment = new DiamondDetailsFragment();
                             Bundle bundle = new Bundle();
@@ -69,6 +72,13 @@ public class SearchFragment extends Fragment {
 
     private void getSearchHistory() {
         adapter.setData(null);
+    }
+
+    public void hideKeyBoard() {
+        if (mView != null) {
+            InputMethodManager imm = (InputMethodManager) mView.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(mView.getWindowToken(), 0);
+        }
     }
 
 }

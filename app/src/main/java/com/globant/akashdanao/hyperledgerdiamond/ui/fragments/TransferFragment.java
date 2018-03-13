@@ -1,12 +1,14 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -31,6 +33,7 @@ public class TransferFragment extends Fragment {
     EditText etHolderName;
     @BindView(R.id.viewFlipper)
     ViewFlipper viewFlipper;
+    private View view;
 
     public TransferFragment() {
         // Required empty public constructor
@@ -41,7 +44,7 @@ public class TransferFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_transfer, container, false);
+        view = inflater.inflate(R.layout.fragment_transfer, container, false);
         ButterKnife.bind(this, view);
         viewFlipper.setDisplayedChild(1);
         return view;
@@ -50,13 +53,14 @@ public class TransferFragment extends Fragment {
 
     @OnClick(R.id.button_change_holder)
     public void onChangeHolder() {
+        hideKeyBoard();
         String diamondId = etDiamondId.getText().toString().trim();
         String holderName = etHolderName.getText().toString().trim();
-        if (diamondId.equalsIgnoreCase("")){
+        if (diamondId.equalsIgnoreCase("")) {
             etDiamondId.setError("Required field");
-        }else if(holderName.equalsIgnoreCase("")){
+        } else if (holderName.equalsIgnoreCase("")) {
             etHolderName.setError("Required field");
-        }else {
+        } else {
             viewFlipper.setDisplayedChild(0);
             ApiClient.instance.changeHolderName(diamondId, holderName)
                     .subscribeOn(Schedulers.io())
@@ -77,5 +81,12 @@ public class TransferFragment extends Fragment {
                     );
         }
 
+    }
+
+    public void hideKeyBoard() {
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
