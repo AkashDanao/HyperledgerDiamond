@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import com.globant.akashdanao.hyperledgerdiamond.utils.PicassoCircleTransformati
 import com.squareup.picasso.Picasso;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -38,6 +40,9 @@ import io.reactivex.schedulers.Schedulers;
 public class LandingFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    String TAG = LandingFragment.class.getSimpleName();
+
+
     @BindView(R.id.rv_diamond)
     RecyclerView recyclerViewDiamond;
 
@@ -47,7 +52,7 @@ public class LandingFragment extends Fragment {
     @BindView(R.id.tv_username)
     TextView textViewUserName;
 
-    private  RecordsAdapter recordsAdapter;
+    private RecordsAdapter recordsAdapter;
 
     @BindView(R.id.viewFlipper)
     ViewFlipper viewFlipper;
@@ -97,10 +102,12 @@ public class LandingFragment extends Fragment {
     }
 
     private void bindDataToRecyclerView(List<Diamond> diamond) {
+        Collections.sort(diamond);
         viewFlipper.setDisplayedChild(1);
         recordsAdapter = new RecordsAdapter(diamond);
         recyclerViewDiamond.setAdapter(recordsAdapter);
     }
+
     private void handleError(Throwable throwable) {
 
     }

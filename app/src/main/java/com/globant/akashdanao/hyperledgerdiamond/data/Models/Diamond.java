@@ -1,10 +1,14 @@
 
 package com.globant.akashdanao.hyperledgerdiamond.data.Models;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Diamond {
+import java.util.Comparator;
+
+public class Diamond implements Comparable<Diamond>{
 
     @SerializedName("Key")
     @Expose
@@ -29,4 +33,8 @@ public class Diamond {
         this.record = record;
     }
 
+    @Override
+    public int compareTo(@NonNull Diamond diamond) {
+        return -this.getRecord().getTime_stamp().compareTo(diamond.getRecord().getTime_stamp());
+    }
 }
