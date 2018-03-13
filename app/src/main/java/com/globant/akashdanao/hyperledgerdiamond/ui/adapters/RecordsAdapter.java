@@ -52,7 +52,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case Constants.ITEM_ONE:
                 ViewHolderDefault viewHolderDefault  = (ViewHolderDefault) holder;
                 viewHolderDefault.bind(diamond);
-                viewHolderDefault.imageViewDiamond.setOnClickListener(new View.OnClickListener() {
+                view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         DiamondDetailsFragment fragment = new DiamondDetailsFragment();
@@ -67,7 +67,7 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             case Constants.ITEM_TWO:
                 ViewHolder viewHolder = (ViewHolder) holder;
                 viewHolder.bind(diamond);
-                viewHolder.imageViewIcon.setOnClickListener(new View.OnClickListener() {
+                view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         DiamondDetailsFragment fragment = new DiamondDetailsFragment();

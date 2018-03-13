@@ -3,6 +3,7 @@ package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,13 @@ public class TransferFragment extends Fragment {
                             id -> {
                                 viewFlipper.setDisplayedChild(1);
                                 Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_success), Toast.LENGTH_SHORT).show();
+                                DiamondDetailsFragment fragment = new DiamondDetailsFragment();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("RECORD_NUMBER", etDiamondId.getText().toString());
+                                fragment.setArguments(bundle);
+                                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                                ft.replace(R.id.fl_home, fragment, fragment.getClass().getName());
+                                ft.commit();
                             },
                             e -> Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_error), Toast.LENGTH_SHORT).show()
                     );

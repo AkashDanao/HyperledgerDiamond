@@ -4,6 +4,7 @@ package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -127,6 +128,13 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
                         id -> {
                             viewFlipper.setDisplayedChild(1);
                             Toast.makeText(getActivity(), "Record Added Successfully", Toast.LENGTH_SHORT).show();
+                            DiamondDetailsFragment fragment = new DiamondDetailsFragment();
+                            Bundle bundle = new Bundle();
+                            bundle.putString("RECORD_NUMBER", et_diamond_id.getText().toString());
+                            fragment.setArguments(bundle);
+                            final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                            ft.replace(R.id.fl_home, fragment, fragment.getClass().getName());
+                            ft.commit();
                         },
                         e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
 
