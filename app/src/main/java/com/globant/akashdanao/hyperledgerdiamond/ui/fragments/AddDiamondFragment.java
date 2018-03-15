@@ -1,7 +1,10 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
@@ -11,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -27,6 +31,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+
+import static com.globant.akashdanao.hyperledgerdiamond.utils.Utility.getBase64String;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +61,17 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
     TextInputEditText et_diamond_id;
     @BindView(R.id.et_holder_name)
     TextInputEditText et_holder_name;
+    @BindView(R.id.imageViewOne)
+    ImageView imageViewOne;
+    @BindView(R.id.iv_add_photos)
+    ImageView imageViewAddPhoto;
+
 
     String certification;
     String TAG = AddDiamondFragment.class.getSimpleName();
     private View view;
+    private static int CAMERA_REQUEST = 1001;
+    private String imageOneString = "null";
 
     HashMap<String, String> mapCertification = new HashMap<>();
 
@@ -76,6 +89,13 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
         sbIGI.setOnCheckedChangeListener(this);
         sbGIA.setOnCheckedChangeListener(this);
         sbHRD.setOnCheckedChangeListener(this);
+        imageViewAddPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                startActivityForResult(intent, CAMERA_REQUEST);
+            }
+        });
         return view;
     }
 
@@ -125,12 +145,11 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
         Log.d(TAG, "onAddRecordButtonClick: " + certification);
         // id , color, cut, carat, clarity, certification, name
         viewFlipper.setDisplayedChild(0);
-        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString(), et_holder_name.getText().toString())
+        ApiClient.instance.saveDiamondRecord(et_diamond_id.getText().toString(), etColor.getText().toString(), etCut.getText().toString(), etCarat.getText().toString(), etClarity.getText().toString(), certification, et_diamond_name.getText().toString(), et_holder_name.getText().toString(), imageOneString)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         id -> {
-                            viewFlipper.setDisplayedChild(1);
                             Toast.makeText(getActivity(), "Record Added Successfully", Toast.LENGTH_SHORT).show();
                             DiamondDetailsFragment fragment = new DiamondDetailsFragment();
                             Bundle bundle = new Bundle();
@@ -140,7 +159,10 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
                             ft.replace(R.id.fl_home, fragment, fragment.getClass().getName());
                             ft.commit();
                         },
-                        e -> Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show());
+                        e -> {
+                            viewFlipper.setDisplayedChild(1);
+                            Toast.makeText(getActivity(), "There is some error", Toast.LENGTH_SHORT).show();
+                        });
 
     }
 
@@ -150,4 +172,23 @@ public class AddDiamondFragment extends Fragment implements SwitchButton.OnCheck
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            if (imageViewOne.getDrawable() == null) {
+                imageViewOne.setImageBitmap(imageBitmap);
+                imageViewOne.setVisibility(View.VISIBLE);
+                imageViewOne.setFitsSystemWindows(true);
+                imageViewAddPhoto.setVisibility(View.GONE);
+                imageOneString = getBase64String(imageBitmap);
+            }
+
+
+        }
+    }
+
+
 }

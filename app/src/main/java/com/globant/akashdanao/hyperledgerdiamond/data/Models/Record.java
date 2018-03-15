@@ -40,6 +40,18 @@ public class Record {
     private String type;
 
 
+    @SerializedName("image")
+    @Expose
+    private String image = null;
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public String getTime_stamp() {
         return time_stamp;
     }
@@ -119,4 +131,6 @@ public class Record {
     public void setType(String type) {
         this.type = type;
     }
+
+
 }

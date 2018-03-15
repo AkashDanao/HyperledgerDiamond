@@ -67,7 +67,6 @@ public class TransferFragment extends Fragment {
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(
                             id -> {
-                                viewFlipper.setDisplayedChild(1);
                                 Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_success), Toast.LENGTH_SHORT).show();
                                 DiamondDetailsFragment fragment = new DiamondDetailsFragment();
                                 Bundle bundle = new Bundle();
@@ -77,7 +76,10 @@ public class TransferFragment extends Fragment {
                                 ft.replace(R.id.fl_home, fragment, fragment.getClass().getName());
                                 ft.commit();
                             },
-                            e -> Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_error), Toast.LENGTH_SHORT).show()
+                            e -> {
+                                viewFlipper.setDisplayedChild(1);
+                                Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.change_holder_error), Toast.LENGTH_SHORT).show();
+                            }
                     );
         }
 

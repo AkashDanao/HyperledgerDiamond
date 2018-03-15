@@ -1,6 +1,7 @@
 package com.globant.akashdanao.hyperledgerdiamond.ui.fragments;
 
 
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,11 +16,12 @@ import android.widget.ViewFlipper;
 import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
-import com.squareup.picasso.Picasso;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Utility;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class DiamondDetailsFragment extends Fragment {
@@ -49,21 +51,29 @@ public class DiamondDetailsFragment extends Fragment {
     @BindView(R.id.textViewHolderName)
     TextView textViewHolderName;
 
+    private CompositeDisposable disposable = new CompositeDisposable();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.diamond_detail_fragment, null);
         ButterKnife.bind(this, view);
         viewFlipper.setDisplayedChild(0);
-        ApiClient.instance.searchRecord(getArguments().getString("RECORD_NUMBER"))
+        disposable.add(ApiClient.instance.searchRecord(getArguments().getString("RECORD_NUMBER"))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(this::bindDataToView, this::handleError);
+                .subscribe(this::bindDataToView, this::handleError));
         return view;
     }
 
+    @Override
+    public void onStop() {
+        super.onStop();
+        disposable.clear();
+    }
 
     private void handleError(Throwable throwable) {
+        viewFlipper.setDisplayedChild(1);
         Toast.makeText(getActivity(), "No record found", Toast.LENGTH_SHORT).show();
     }
 
@@ -78,7 +88,8 @@ public class DiamondDetailsFragment extends Fragment {
         textViewTransactionHash.setText(record.getTransid());
         textViewCut.setText(record.getCut());
         textViewHolderName.setText(record.getHolder_name());
-        Picasso.with(view.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
+        imageViewDiamond.setImageBitmap(record.getImage() != "" ? Utility.getBitmap(record.getImage()) : BitmapFactory.decodeResource(view.getContext().getResources(),
+                R.drawable.diamond_placeholder));
     }
 
 }

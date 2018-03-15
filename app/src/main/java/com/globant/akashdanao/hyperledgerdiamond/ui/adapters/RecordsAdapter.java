@@ -15,7 +15,7 @@ import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Diamond;
 import com.globant.akashdanao.hyperledgerdiamond.ui.fragments.DiamondDetailsFragment;
 import com.globant.akashdanao.hyperledgerdiamond.utils.Constants;
-import com.squareup.picasso.Picasso;
+import com.globant.akashdanao.hyperledgerdiamond.utils.Utility;
 
 import java.util.List;
 
@@ -120,7 +120,9 @@ public class RecordsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         public void bind(Diamond diamond) {
             holderName.setText(diamond.getRecord().getName());
             size.setText("#" + diamond.getKey());
-            Picasso.with(itemView.getContext()).load(R.drawable.diamond_placeholder).into(imageViewDiamond);
+            if (!diamond.getRecord().getImage().toString().equalsIgnoreCase("")) {
+                imageViewDiamond.setImageBitmap(Utility.getBitmap(diamond.getRecord().getImage()));
+            }
         }
     }
 

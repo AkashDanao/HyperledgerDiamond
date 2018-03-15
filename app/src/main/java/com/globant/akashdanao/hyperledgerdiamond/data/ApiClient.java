@@ -43,16 +43,17 @@ public enum ApiClient {
         return diamondService.getAllDiamonds();
     }
 
-    public Flowable<String> saveRecord(String id, String holder, long latitude, long longitude, long timeStamp, String vessel) {
-        String url = "/add_tuna/" + id + "-" + latitude + "-" + longitude + "-" + timeStamp + "-" + holder + "-" + vessel;
-        return diamondService.saveRecord(url);
-    }
+//    public Flowable<String> saveRecord(String id, String holder, long latitude, long longitude, long timeStamp, String vessel) {
+//        String url = "/add_tuna/" + id + "-" + latitude + "-" + longitude + "-" + timeStamp + "-" + holder + "-" + vessel;
+//        return diamondService.saveRecord(url);
+//    }
 
 
     // id , color, cut, carat, clarity, certification, name
-    public Flowable<String> saveDiamondRecord(String id, String color, String cut, String carat, String clarity, String certification, String name, String holdername) {
-        String url = "/add_tuna/" + id + "-" + color + "-" + cut + "-" + carat + "-" + clarity + "-" + certification + "-" + name + "-" + holdername + "-" + (System.currentTimeMillis() / 1000) + "-" + Constants.ADD;
-        return diamondService.saveRecord(url);
+    public Flowable<String> saveDiamondRecord(String id, String color, String cut, String carat, String clarity, String certification, String name, String holdername, String imageString) {
+        String timeStamp = (System.currentTimeMillis() / 1000) + "";
+//        String url = "/add_tuna/" + id + "-" + color + "-" + cut + "-" + carat + "-" + clarity + "-" + certification + "-" + name + "-" + holdername + "-" + (System.currentTimeMillis() / 1000) + "-" + Constants.ADD + "-" + imageString;
+        return diamondService.saveRecord(id, color, cut, clarity, certification, carat, name, holdername, timeStamp, Constants.ADD, imageString);
     }
 
     public Flowable<Record> searchRecord(String recordId) {
