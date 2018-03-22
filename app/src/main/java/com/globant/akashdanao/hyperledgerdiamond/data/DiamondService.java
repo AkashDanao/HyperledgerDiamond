@@ -28,4 +28,7 @@ public interface DiamondService {
 
     @GET
     Flowable<String> changeHolderName (@Url String url);
+
+    @GET
+    Flowable<String> updateLocation(@Url String url);
 }

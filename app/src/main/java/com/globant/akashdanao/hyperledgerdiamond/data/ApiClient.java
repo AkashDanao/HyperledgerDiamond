@@ -65,6 +65,19 @@ public enum ApiClient {
         return diamondService.changeHolderName(url);
     }
 
+    public Flowable<String> updateLocationData(String diamonId, double latitude, double longitude) {
+        String url = "/update_location/"
+                + diamonId
+                + "-"
+                + (System.currentTimeMillis() / 1000)
+                + "-"
+                + latitude
+                + "-"
+                + longitude;
+
+        return diamondService.updateLocation(url);
+    }
+
     public static class StringConverterFactory extends Converter.Factory {
         private static final MediaType MEDIA_TYPE = MediaType.parse("text/plain");
 

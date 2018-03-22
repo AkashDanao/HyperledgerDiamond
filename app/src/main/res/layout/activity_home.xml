@@ -10,17 +10,15 @@
         android:id="@+id/fl_home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation"></FrameLayout>
+        android:layout_above="@id/bottom_navigation" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_above="@+id/bottom_navigation"
-        android:background="@color/colorLine"></View>
+        android:background="@color/colorLine" />
 
-    <android.support.design.widget.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:overide="true"
+    <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,6 +27,6 @@
         android:background="@android:color/white"
         android:fitsSystemWindows="true"
         app:itemIconTint="@drawable/menu_selector"
-        app:menu="@menu/nevigation_items" />
+        tools:overide="true" />
 
 </RelativeLayout>
