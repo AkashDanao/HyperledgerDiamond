@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.globant.akashdanao.hyperledgerdiamond.R;
 import com.globant.akashdanao.hyperledgerdiamond.data.ApiClient;
 import com.globant.akashdanao.hyperledgerdiamond.data.Models.Record;
 import com.globant.akashdanao.hyperledgerdiamond.utils.Utility;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,6 +53,9 @@ public class DiamondDetailsFragment extends Fragment {
     ViewFlipper viewFlipper;
     @BindView(R.id.textViewHolderName)
     TextView textViewHolderName;
+    @BindView(R.id.textViewDiamondJourney)
+    TextView textViewDiamondJourney;
+    private List<Record> listRecords;
 
     private CompositeDisposable disposable = new CompositeDisposable();
 
@@ -63,6 +69,13 @@ public class DiamondDetailsFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::bindDataToView, this::handleError));
+        textViewDiamondJourney.setOnClickListener(v -> {
+            DiamondJourneyFragment journeyFragment = new DiamondJourneyFragment();
+            journeyFragment.setListRecords(listRecords);
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ft.replace(R.id.fl_home, journeyFragment, journeyFragment.getClass().getName());
+            ft.commit();
+        });
         return view;
     }
 
@@ -77,18 +90,19 @@ public class DiamondDetailsFragment extends Fragment {
         Toast.makeText(getActivity(), "No record found", Toast.LENGTH_SHORT).show();
     }
 
-    private void bindDataToView(Record record) {
+    private void bindDataToView(List<Record> listRecords) {
+        this.listRecords = listRecords;
         viewFlipper.setDisplayedChild(1);
-        textViewDiamondTitle.setText(record.getName());
-        textViewCarat.setText(record.getCarat());
-        textViewCertificationName.setText(record.getCert());
-        textViewClarity.setText(record.getClarity());
-        textViewColor.setText(record.getColor());
+        textViewDiamondTitle.setText(listRecords.get(0).getName());
+        textViewCarat.setText(listRecords.get(0).getCarat());
+        textViewCertificationName.setText(listRecords.get(0).getCert());
+        textViewClarity.setText(listRecords.get(0).getClarity());
+        textViewColor.setText(listRecords.get(0).getColor());
         textViewDiamondNumber.setText("#" + getArguments().getString("RECORD_NUMBER"));
-        textViewTransactionHash.setText(record.getTransid());
-        textViewCut.setText(record.getCut());
-        textViewHolderName.setText(record.getHolder_name());
-        imageViewDiamond.setImageBitmap(record.getImage() != "" ? Utility.getBitmap(record.getImage()) : BitmapFactory.decodeResource(view.getContext().getResources(),
+        textViewTransactionHash.setText(listRecords.get(0).getTransid());
+        textViewCut.setText(listRecords.get(0).getCut());
+        textViewHolderName.setText(listRecords.get(0).getHoldername());
+        imageViewDiamond.setImageBitmap(listRecords.get(0).getImage() != "" ? Utility.getBitmap(listRecords.get(0).getImage()) : BitmapFactory.decodeResource(view.getContext().getResources(),
                 R.drawable.diamond_placeholder));
     }
 

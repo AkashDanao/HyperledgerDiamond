@@ -52,16 +52,32 @@ public enum ApiClient {
     // id , color, cut, carat, clarity, certification, name
     public Flowable<String> saveDiamondRecord(String id, String color, String cut, String carat, String clarity, String certification, String name, String holdername, String imageString) {
         String timeStamp = (System.currentTimeMillis() / 1000) + "";
+        String latitde = "19.07598";
+        String longitude = "72.87766";
 //        String url = "/add_tuna/" + id + "-" + color + "-" + cut + "-" + carat + "-" + clarity + "-" + certification + "-" + name + "-" + holdername + "-" + (System.currentTimeMillis() / 1000) + "-" + Constants.ADD + "-" + imageString;
-        return diamondService.saveRecord(id, color, cut, clarity, certification, carat, name, holdername, timeStamp, Constants.ADD, imageString);
+        return diamondService.saveRecord(id, color, cut, clarity, certification, carat, name, holdername, timeStamp, Constants.ADD, imageString, latitde, longitude);
     }
 
-    public Flowable<Record> searchRecord(String recordId) {
+    public Flowable<List<Record>> searchRecord(String recordId) {
         return diamondService.searchRecord("/get_tuna/" + recordId);
     }
 
     public Flowable<String> changeHolderName(String id, String name) {
-        String url = "/change_holder/" + id + "-" + name + "-" + (System.currentTimeMillis() / 1000 + "-" + Constants.TRANSFER);
+        String latitde = "19.07598";
+        String longitude = "72.87766";
+        String url = "/change_holder/"
+                + id
+                + "-"
+                + name
+                + "-"
+                + (System.currentTimeMillis() / 1000
+                + "-"
+                + Constants.TRANSFER
+                + "-"
+                + latitde
+                + "-"
+                + longitude
+        );
         return diamondService.changeHolderName(url);
     }
 

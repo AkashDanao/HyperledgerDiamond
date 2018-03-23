@@ -13,21 +13,21 @@ import retrofit2.http.POST;
 import retrofit2.http.Url;
 
 public interface DiamondService {
-   @GET("/get_all_tuna")
-   Flowable<List<Diamond>> getAllDiamonds();
+    @GET("/get_all_tuna")
+    Flowable<List<Diamond>> getAllDiamonds();
 
     @POST("/add_tuna")
     @FormUrlEncoded
     Flowable<String> saveRecord(@Field("key") String key, @Field("color") String color, @Field("cut") String cut,
                                 @Field("clarity") String clarity, @Field("certification") String certification, @Field("carat") String carat,
                                 @Field("name") String name, @Field("holderName") String holdername, @Field("timestamp") String timeStamp,
-                                @Field("type") String type, @Field("image") String image);
+                                @Field("type") String type, @Field("image") String image, @Field("latitude") String latitude, @Field("longitude") String longitude);
 
     @GET
-    Flowable<Record> searchRecord(@Url String url);
+    Flowable<List<Record>> searchRecord(@Url String url);
 
     @GET
-    Flowable<String> changeHolderName (@Url String url);
+    Flowable<String> changeHolderName(@Url String url);
 
     @GET
     Flowable<String> updateLocation(@Url String url);

@@ -6,12 +6,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class Record {
 
-    @SerializedName("carat")
-    @Expose
-    private String carat;
-    @SerializedName("cert")
-    @Expose
-    private String cert;
     @SerializedName("clarity")
     @Expose
     private String clarity;
@@ -21,6 +15,12 @@ public class Record {
     @SerializedName("cut")
     @Expose
     private String cut;
+    @SerializedName("carat")
+    @Expose
+    private String carat;
+    @SerializedName("cert")
+    @Expose
+    private String cert;
     @SerializedName("name")
     @Expose
     private String name;
@@ -29,60 +29,22 @@ public class Record {
     private String transid;
     @SerializedName("holdername")
     @Expose
-    private String holder_name;
-
+    private String holdername;
     @SerializedName("timeStamp")
     @Expose
-    private String time_stamp;
-
+    private String timeStamp;
     @SerializedName("type")
     @Expose
     private String type;
-
-
     @SerializedName("image")
     @Expose
-    private String image = null;
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getTime_stamp() {
-        return time_stamp;
-    }
-
-    public void setTime_stamp(String time_stamp) {
-        this.time_stamp = time_stamp;
-    }
-
-    public String getHolder_name() {
-        return holder_name;
-    }
-
-    public void setHolder_name(String holder_name) {
-        this.holder_name = holder_name;
-    }
-
-    public String getCarat() {
-        return carat;
-    }
-
-    public void setCarat(String carat) {
-        this.carat = carat;
-    }
-
-    public String getCert() {
-        return cert;
-    }
-
-    public void setCert(String cert) {
-        this.cert = cert;
-    }
+    private String image;
+    @SerializedName("latitude")
+    @Expose
+    private String latitude = "19.07598";
+    @SerializedName("longitude")
+    @Expose
+    private String longitude = "72.87766";
 
     public String getClarity() {
         return clarity;
@@ -108,6 +70,22 @@ public class Record {
         this.cut = cut;
     }
 
+    public String getCarat() {
+        return carat;
+    }
+
+    public void setCarat(String carat) {
+        this.carat = carat;
+    }
+
+    public String getCert() {
+        return cert;
+    }
+
+    public void setCert(String cert) {
+        this.cert = cert;
+    }
+
     public String getName() {
         return name;
     }
@@ -124,6 +102,22 @@ public class Record {
         this.transid = transid;
     }
 
+    public String getHoldername() {
+        return holdername;
+    }
+
+    public void setHoldername(String holdername) {
+        this.holdername = holdername;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
     public String getType() {
         return type;
     }
@@ -132,5 +126,30 @@ public class Record {
         this.type = type;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
 
 }
+
+

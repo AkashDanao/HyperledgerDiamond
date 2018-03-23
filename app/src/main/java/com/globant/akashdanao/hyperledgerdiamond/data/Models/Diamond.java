@@ -6,9 +6,7 @@ import android.support.annotation.NonNull;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Comparator;
-
-public class Diamond implements Comparable<Diamond>{
+public class Diamond implements Comparable<Diamond> {
 
     @SerializedName("Key")
     @Expose
@@ -35,6 +33,6 @@ public class Diamond implements Comparable<Diamond>{
 
     @Override
     public int compareTo(@NonNull Diamond diamond) {
-        return -this.getRecord().getTime_stamp().compareTo(diamond.getRecord().getTime_stamp());
+        return -this.getRecord().getTimeStamp().compareTo(diamond.getRecord().getTimeStamp());
     }
 }
