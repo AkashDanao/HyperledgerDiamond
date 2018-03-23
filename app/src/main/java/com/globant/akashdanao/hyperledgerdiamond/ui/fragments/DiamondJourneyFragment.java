@@ -51,12 +51,14 @@ public class DiamondJourneyFragment extends Fragment implements OnMapReadyCallba
     public void onMapReady(GoogleMap googleMap) {
         googleMap.clear();
         ArrayList<LatLng> points = null;
-        PolylineOptions polyLineOptions = getPolyLineOptions(listRecords);
-        getMarkerOptions(googleMap, listRecords);
-        googleMap.addPolyline(polyLineOptions);
-        latLngBounds = latLngBoundsBuilder.build();
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(latLngBounds, 100);
-        googleMap.setOnMapLoadedCallback(() -> googleMap.animateCamera(cameraUpdate));
+        if (listRecords != null && listRecords.size() > 1) {
+            PolylineOptions polyLineOptions = getPolyLineOptions(listRecords);
+            getMarkerOptions(googleMap, listRecords);
+            googleMap.addPolyline(polyLineOptions);
+            latLngBounds = latLngBoundsBuilder.build();
+            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(latLngBounds, 100);
+            googleMap.setOnMapLoadedCallback(() -> googleMap.animateCamera(cameraUpdate));
+        }
 
     }
 

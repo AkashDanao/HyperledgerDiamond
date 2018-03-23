@@ -249,15 +249,11 @@
                 android:layout_height="1dp"
                 android:background="@color/colorLine" />
 
-            <TextView
-                android:id="@+id/textViewDiamondJourney"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                android:text="View Diamond Journey"
-                android:textStyle="bold" />
+            <fragment
+                android:id="@+id/supportMapFragment"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </ViewFlipper>
 </LinearLayout>
